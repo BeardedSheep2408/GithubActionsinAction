@@ -24,7 +24,7 @@ on:
         environment:
           description: 'Environment to run tests again'
           type: 'environment'
-          required: false
+          required: true
 
 jobs:
   MyFirstJob:
