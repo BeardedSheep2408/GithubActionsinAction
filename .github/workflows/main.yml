@@ -28,7 +28,7 @@ on:
 
 jobs:
   MyFirstJob:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, windows-latest, macOs-latest]
     steps:
       - run: echo "Hello world"
       - name: Checkout
