@@ -27,13 +27,25 @@ on:
           required: true
 
 jobs:
-  MyFirstJob:
-    runs-on: [ubuntu-latest, windows-latest]
+  job_1:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello world"
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: List files in the repository
-        run: |
-          echo "The repository ${{github.repository}} contains the following lines :"
-          tree
+      - run: "echo Job: ${{ github.job }}"
+  
+  job_2:
+    runs-on: ubuntu-latest
+    needs: job_1
+    steps:
+      - run: "echo Job: ${{ github.job }}"
+  
+  job_3:
+    runs-on: ubuntu-latest
+    needs: job_1
+    steps:
+      - run: "echo Job: ${{ github.job }}"
+  
+  job_4:
+    runs-on: ubuntu-latest
+    needs: [job_2, job_3]
+    steps:
+      - run: "echo Job: ${{ github.job }}"
