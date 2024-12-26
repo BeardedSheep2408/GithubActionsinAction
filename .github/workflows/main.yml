@@ -33,14 +33,11 @@ jobs:
       - name: Clean install dependencies and build
         run: |
           killall apt apt-get
-
           rm /var/lib/apt/lists/lock
           rm /var/cache/apt/archives/lock
           rm /var/lib/dpkg/lock*
-
           apt update
           apt install nodejs
-
           npm install 
           npm run build
         working-directory: ./
