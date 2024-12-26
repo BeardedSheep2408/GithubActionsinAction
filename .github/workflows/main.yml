@@ -32,8 +32,6 @@ jobs:
     steps:
       - name: Clean install dependencies and build
         run: |
-          apt update
-          apt upgrade
           npm install
           npm run build
         working-directory: /tmp
