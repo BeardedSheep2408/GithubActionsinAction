@@ -32,7 +32,6 @@ jobs:
     steps:
       - name: Clean install dependencies and build
         run: |
-          apt update
           apt install nodejs
           npm init
           npm install socket.io --save
