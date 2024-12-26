@@ -40,5 +40,6 @@ jobs:
           sudo apt update
           sudo apt install nodejs
           echo "NPM INSTALL AND RUN BUILD"
-          sudo npm install 
+          sudo npm init
+          sudo npm install socket.io --save
           sudo npm run build
