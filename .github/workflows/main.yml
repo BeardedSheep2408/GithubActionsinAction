@@ -33,13 +33,13 @@ jobs:
       - name: Clean install dependencies and build
         run: |
           echo "KILLING ALL PROCESSES AND REMOVING FOLDERS"
-          sudo rm /var/lib/apt/lists/lock
-          sudo rm /var/cache/apt/archives/lock
-          sudo rm /var/lib/dpkg/lock*
+          sudo rm -f /var/lib/apt/lists/lock
+          sudo rm -f /var/cache/apt/archives/lock
+          sudo rm -f /var/lib/dpkg/lock*
           echo "APT UPDATE AND INSTALLING NODE.JS"
           sudo apt update
-          sudo apt install nodejs
+          sudo apt install -y nodejs npm
           echo "NPM INSTALL AND RUN BUILD"
-          sudo npm init
-          sudo npm install socket.io --save
-          sudo npm run build
+          npm init -y
+          npm install socket.io --save
+          npm run build
