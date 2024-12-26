@@ -32,10 +32,9 @@ jobs:
     steps:
       - name: Clean install dependencies and build
         run: |
-          apt istall
           apt update
           apt upgrade
           npm install
           npm run build
-        working-directory: ./temp
+        working-directory: /tmp
         shell: bash
