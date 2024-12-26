@@ -30,22 +30,11 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo Job: ${{ github.job }}"
-  
-  job_2:
-    runs-on: windows-latest
-    needs: job_1
-    steps:
-      - run: "echo Job: ${{ github.job }}"
-  
-  job_3:
-    runs-on: macos-latest
-    needs: job_1
-    steps:
-      - run: "echo Job: ${{ github.job }}"
-  
-  job_4:
-    runs-on: ubuntu-latest
-    needs: [job_2, job_3]
-    steps:
-      - run: "echo Job: ${{ github.job }}"
+      - name: Clean install dependencies and build
+        run: |
+          apt update
+          apt upgrade
+          npm install
+          npm run build
+        working-directory: ./temp
+        shell: bash
