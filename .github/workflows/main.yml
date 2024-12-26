@@ -32,12 +32,8 @@ jobs:
     steps:
       - name: Clean install dependencies and build
         run: |
-          sudo rm /var/lib/apt/lists/lock
-          sudo rm /var/cache/apt/archives/lock
-          sudo rm /var/lib/dpkg/lock*
           sudo apt update
           sudo apt install nodejs
           sudo npm install 
           sudo npm run build
-        working-directory: ./
         shell: bash
