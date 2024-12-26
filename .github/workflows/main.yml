@@ -37,5 +37,4 @@ jobs:
           npm init
           npm install socket.io --save
           npm run build
-        working-directory: ./temp
         shell: bash
