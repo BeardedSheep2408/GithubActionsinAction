@@ -33,18 +33,12 @@ jobs:
       - name: Clean install dependencies and build
         run: |
           echo "KILLING ALL PROCESSES AND REMOVING FOLDERS"
-        
-          sudo killall apt apt-get
           sudo rm /var/lib/apt/lists/lock
           sudo rm /var/cache/apt/archives/lock
           sudo rm /var/lib/dpkg/lock*
-
           echo "APT UPDATE AND INSTALLING NODE.JS"
-
           sudo apt update
           sudo apt install nodejs
-
           echo "NPM INSTALL AND RUN BUILD"
-
           sudo npm install 
           sudo npm run build
