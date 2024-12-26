@@ -32,6 +32,10 @@ jobs:
     steps:
       - name: Clean install dependencies and build
         run: |
-          npm install
+          apt update
+          apt install nodejs
+          npm init
+          npm install socket.io --save
           npm run build
+        working-directory: ./temp
         shell: bash
