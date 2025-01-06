@@ -6,9 +6,6 @@ on:
       - main
   workflow_dispatch:
     inputs:
-        homedrive:
-          description: 'the home drive on the machine'
-          required: true
         loglevel:
           description: 'log level'
           default: 'warning'
@@ -17,14 +14,6 @@ on:
             - info
             - warning
             - debug
-        tag:
-          description: 'Apply tag after successfull test run'
-          required: true
-          type: boolean
-        environment:
-          description: 'Environment to run tests again'
-          type: 'environment'
-          required: true
 
 jobs:
   example-job:
