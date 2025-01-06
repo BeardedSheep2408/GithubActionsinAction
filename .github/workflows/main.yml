@@ -19,8 +19,18 @@ jobs:
   example-job:
     runs-on: self-hosted
     steps:
+      - name: Install Node with version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: use the CLI
+        run: node
+
       - name: Run a command
         run: echo 'Job is running on ${{ runner.os }}'
+
+      
