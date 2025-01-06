@@ -29,12 +29,9 @@ on:
 jobs:
   example-job:
     runs-on: self-hosted
-    strategy:
-      matrix:
-        os: [ubuntu-latest, vnet1, sql]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Run a command
-        run: echo 'Job is running on ${{ matrix.os }}'
+        run: echo 'Job is running on ${{ runner.os }}'
