@@ -6,18 +6,18 @@ on:
       - main
   workflow_dispatch:
     inputs:
-        loglevel:
-          description: 'log level'
-          default: 'warning'
-          type: choice
-          options:
-            - info
-            - warning
-            - debug
+      loglevel:
+        description: 'log level'
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 
 jobs:
   example-job:
-    runs-on: [self-hosted, ubuntu-latest, windows-latest]
+    runs-on: [default-self-hosted]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
