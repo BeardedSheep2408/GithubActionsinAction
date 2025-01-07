@@ -1,6 +1,6 @@
 name: harden runner demo
 on:
-  workflow_dispatch:
+  [push]
   
 jobs:
   demo:
