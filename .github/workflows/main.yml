@@ -4,10 +4,10 @@ on:
   
 jobs:
   demo:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@v2.1.0
+        uses: step-security/harden-runner@v2.10.2
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
           
